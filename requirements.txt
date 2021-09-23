@@ -2,3 +2,4 @@ TA-Lib
 flask
 pandas
 baostock
+autopep8

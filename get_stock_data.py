@@ -1,7 +1,10 @@
+import time
 import baostock as bs
 import pandas as pd
 
 fields = 'date, code, open, high, low, close, volume'
+
+time_start = time.time()
 
 lg = bs.login()
 print('login respond error_code:'+lg.error_code)
@@ -33,3 +36,7 @@ for index, row in stocks.iterrows():
         data_list.append(rs.get_row_data())
     result = pd.DataFrame(data_list, columns=rs.fields)
     result.to_csv(f".\stock_data\{this_code}.csv", index=False)
+
+time_end = time.time()
+time_sum = round(time_end - time_start, 2)
+print(f"Takes up {time_sum}s to complete collecting data.")
