@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style> 
+            body {font-family: arial; margin: 20px;}
+            td {padding: 10px;}
+            .bullish { background: green; color: white; }
+            .bearish { background: red; color: white; }
+        </style>
+    </head>
+
+    <body>
+        <h1>Candlestick Screener</h1>
+
+        <form>
+            <select name="pattern">
+                <option value=""> -- Select a pattern -- </option>
+                {% for key in candlestick_patterns %}
+                    <option value="{{key}}" {% if pattern == key %} selected="selected"{%endif%}>{{candlestick_patterns[key]}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="scan">
+        </form>
+
+        <table>
+            <tr>
+                <th>
+                    symbol
+                </th>
+                <th>
+                    name
+                </th>
+                <th>
+                    signal
+                </th>
+            </tr>
+                
+        {% for stock in stocks %}
+            {% if stocks[stock][pattern] %}
+            <tr>
+                <td> {{stock}} </td>
+                <td> {{stocks[stock]['company']}} </td>
+                <td class="{{stocks[stock][pattern]}}"> {{stocks[stock][pattern]}} </td>
+            </tr>
+            {% endif %}                 
+        {% endfor %}
+        </table>
+    </body>
+</html>
