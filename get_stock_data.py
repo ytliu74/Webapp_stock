@@ -1,4 +1,5 @@
 import time
+import os
 import baostock as bs
 import pandas as pd
 
@@ -22,6 +23,10 @@ hs300_result = pd.DataFrame(hs300_stocks, columns=rs_300.fields)[
 hs300_result.to_csv('.\hs300.csv', index=False)
 
 stocks = pd.read_csv('.\hs300.csv')
+
+path = '.\stock_data'
+if not os.path.exists(path):
+    os.mkdir(path)
 
 for index, row in stocks.iterrows():
     this_code = row['code']
