@@ -1,7 +1,7 @@
 <html>
     <head>
         <style> 
-            body {font-family: arial; margin: 20px;}
+            body {font-family: arial; margin: 20px; text-align: center;}
             td {padding: 10px;}
             .bullish { background: green; color: white; }
             .bearish { background: red; color: white; }
@@ -21,13 +21,10 @@
             <input type="submit" value="scan">
         </form>
 
-        <table>
+        <table border="1px">
             <tr>
                 <th>
                     symbol
-                </th>
-                <th>
-                    name
                 </th>
                 <th>
                     signal
@@ -37,12 +34,24 @@
         {% for stock in stocks %}
             {% if stocks[stock][pattern] %}
             <tr>
-                <td> {{stock}} </td>
-                <td> {{stocks[stock]['company']}} </td>
+                <td> {{stock}}: {{stocks[stock]['company']}} </td>
                 <td class="{{stocks[stock][pattern]}}"> {{stocks[stock][pattern]}} </td>
             </tr>
+            <tr>
+                <td colspan="2"> <img src="static/k_chart/{{stock}}.png" /> </td>
+            </tr>
+            <tr> </tr>
+            <tr> </tr>
             {% endif %}                 
         {% endfor %}
         </table>
+        <style>
+            table { 
+                margin: 0 auto;
+                text-align: center;
+            }
+        </style>
+
+
     </body>
 </html>

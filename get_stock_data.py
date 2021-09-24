@@ -46,6 +46,6 @@ for index, row in stocks.iterrows():
 
 time_end = time.time()
 time_sum = round(time_end - time_start, 2)
-print(f"Takes up {time_sum}s to complete collecting data.")
+print(f"Takes up {time_sum} s to complete collecting data.")
 
 bs.logout()
