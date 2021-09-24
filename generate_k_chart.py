@@ -19,7 +19,7 @@ def get_kchart(src):
 def clear_kchart_buffers():
     path = '.\static\k_chart'
     if not os.path.exists(path):
-        os.mkdir(path)
+        os.makedirs(path)
     else:
         shutil.rmtree(path)
         os.mkdir(path)
