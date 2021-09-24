@@ -3,3 +3,4 @@ flask
 pandas
 baostock
 autopep8
+mplfinance
