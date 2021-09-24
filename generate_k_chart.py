@@ -25,4 +25,6 @@ def clear_kchart_buffers():
 
 if __name__ == '__main__':
     get_kchart('sh.600000')
-    clear_kchart_buffers()
+    src_path = '.\k_chart'
+    src_list = os.listdir(src_path)
+    print(src_list)

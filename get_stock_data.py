@@ -4,6 +4,8 @@ import pandas as pd
 
 fields = 'date, code, open, high, low, close, volume'
 
+start_date = '2021-01-01'
+
 time_start = time.time()
 
 lg = bs.login()
@@ -26,7 +28,7 @@ for index, row in stocks.iterrows():
     this_stock = row['code_name']
 
     rs = bs.query_history_k_data(
-        this_code, fields, start_date='2020-01-01', frequency='d')
+        this_code, fields, start_date=start_date, frequency='d')
     print(f"Collecting klines: {this_code}")
     print('query_history_k_data_plus respond error_code:'+rs.error_code)
     print('query_history_k_data_plus respond error_msg:'+rs.error_msg)
@@ -40,3 +42,5 @@ for index, row in stocks.iterrows():
 time_end = time.time()
 time_sum = round(time_end - time_start, 2)
 print(f"Takes up {time_sum}s to complete collecting data.")
+
+bs.logout()
