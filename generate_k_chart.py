@@ -12,7 +12,7 @@ def get_kchart(src):
     data.index = pd.DatetimeIndex(data['date'])
 
     save = dict(fname=f'.\static\k_chart\{src}.png', dpi=80, pad_inches=0.25)
-    mpf.plot(data.tail(100), type='candle',
+    mpf.plot(data.tail(60), type='candle',
              volume=True, savefig=save, style='yahoo')
 
 
