@@ -12,11 +12,11 @@ Tip: TA-Lib requires to be download from [Python Extension Packages for Windows 
 
 
 
-1. Running `daily_fetch.bat` daily to fetch the newest data.
+* Running `daily_fetch.bat` daily to fetch the newest data. You can add it to **Scheduled Tasks**, in order to fetch new data automatically.
 
-   You can add it to **Scheduled Tasks**, in order to fetch new data automatically.
+**For local run:** Use `$ flask run` to start.
 
-2. `flask run` and have fun!
+**For server deployment:** Use `$ python server.py `
 
 
 
