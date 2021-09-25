@@ -15,7 +15,7 @@
             <select name="pattern">
                 <option value=""> -- Select a pattern -- </option>
                 {% for key in candlestick_patterns %}
-                    <option value="{{key}}" {% if pattern == key %} selected="selected"{%endif%}>{{candlestick_patterns[key]}}</option>
+                    <option value="{{key}}" {% if pattern == key %} selected="selected"{%endif%}>{{candlestick_patterns[key][0]}} - {{candlestick_patterns[key][1]}}</option>
                 {% endfor %}
             </select>
             <input type="submit" value="scan">
