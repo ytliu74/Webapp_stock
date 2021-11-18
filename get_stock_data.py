@@ -7,6 +7,9 @@ fields = 'date, code, open, high, low, close, volume'
 
 start_date = '2021-01-01'
 
+if not os.path.exists('./stock_data'):
+    os.mkdir('./stock_data')
+
 time_start = time.time()
 
 lg = bs.login()

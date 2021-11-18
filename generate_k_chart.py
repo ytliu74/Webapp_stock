@@ -26,6 +26,9 @@ def clear_kchart_buffers():
 
 
 if __name__ == '__main__':
+    if not os.path.exists('./static/k_chart'):
+        os.makedirs('./static/k_chart')
+    
     time_start = time.time()
     clear_kchart_buffers()
 
