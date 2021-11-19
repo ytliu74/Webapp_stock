@@ -5,3 +5,5 @@ baostock
 autopep8
 mplfinance
 gunicorn
+schedule
+tqdm
