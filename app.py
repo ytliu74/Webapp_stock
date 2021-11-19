@@ -13,7 +13,7 @@ def index():
     pattern = request.args.get('pattern', None)
     stocks = {}
 
-    with open('hs300.csv', encoding='utf-8') as f:
+    with open('stocks.csv', encoding='utf-8') as f:
         for row in csv.reader(f):
             if row[0] == 'code':  # skip the first row
                 continue

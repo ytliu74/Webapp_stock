@@ -29,6 +29,7 @@ def get_stock_data(start_date='2018-01-01'):
     })
 
     stocks = append_df.append(hs300_result, ignore_index=True)
+    stocks.to_csv('./stocks.csv', index=False)
 
     path = './stock_data'
     if not os.path.exists(path):
